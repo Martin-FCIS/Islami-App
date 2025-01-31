@@ -11,6 +11,7 @@ class HistoryCardWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var size=MediaQuery.of(context).size;
     return InkWell(
       onTap: () {
         Navigator.pushNamed(context, SuraDetails.routeName,arguments:sura);
@@ -33,8 +34,8 @@ class HistoryCardWidget extends StatelessWidget {
                 Text(sura.suraVerses + " Verses",),
               ],
             ),
-            SizedBox(width: 10,),
-            Image.asset(AppAssets.suraCard,width: 120,)
+            SizedBox(width: size.width*0.01,),
+            Image.asset(AppAssets.suraCard,width: size.width*0.25,)
 
           ],
         ),

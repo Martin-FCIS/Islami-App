@@ -25,6 +25,7 @@ class _QuranScreenState extends State<QuranScreen> {
 
   @override
   Widget build(BuildContext context) {
+    var size =MediaQuery.of(context).size;
     return Container(
       decoration: const BoxDecoration(
         image: DecorationImage(
@@ -53,8 +54,8 @@ class _QuranScreenState extends State<QuranScreen> {
                     setState(() {});
                   },
                 ),
-                const SizedBox(
-                  height: 15,
+                SizedBox(
+                  height: size.height*0.02
                 ),
                 if (AppData.historyIds.isNotEmpty)
                   ZoomIn(
@@ -70,10 +71,10 @@ class _QuranScreenState extends State<QuranScreen> {
                               fontWeight: FontWeight.bold),
                         ),
                         SizedBox(
-                          height: 15,
+                          height: size.height*0.015,
                         ),
                         SizedBox(
-                          height: 110,
+                          height: size.height*0.13,
                           child: ListView.builder(
                             itemCount: AppData.historyIds.length,
                             scrollDirection: Axis.horizontal,
@@ -93,7 +94,7 @@ class _QuranScreenState extends State<QuranScreen> {
                     ),
                   ),
                 SizedBox(
-                  height: 15,
+                  height: size.height*0.015,
                 ),
                 ZoomIn(
                   delay: Duration(seconds: 4),
@@ -105,8 +106,8 @@ class _QuranScreenState extends State<QuranScreen> {
                         fontWeight: FontWeight.bold),
                   ),
                 ),
-                const SizedBox(
-                  height: 15,
+                SizedBox(
+                  height: size.height*0.015,
                 ),
                 Expanded(
                   child: ZoomIn(
@@ -139,10 +140,10 @@ class _QuranScreenState extends State<QuranScreen> {
                               Stack(
                                 alignment: Alignment.center,
                                 children: [
-                                  const ImageIcon(
+                                   ImageIcon(
                                     AssetImage(AppAssets.SuraNumberIcon),
                                     color: AppColors.White,
-                                    size: 60,
+                                    size: size.width*0.14,
                                   ),
                                   Text(
                                     (indexUse + 1).toString(),
@@ -151,8 +152,8 @@ class _QuranScreenState extends State<QuranScreen> {
                                   ),
                                 ],
                               ),
-                              const SizedBox(
-                                width: 10,
+                               SizedBox(
+                                width: size.width*0.025,
                               ),
                               Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
