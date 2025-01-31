@@ -33,10 +33,7 @@ class _LayoutScreenState extends State<LayoutScreen> {
               selectedIndex = value;
               setState(() {});
             },
-            backgroundColor: AppColors.WhiteCoffe,
-            type: BottomNavigationBarType.fixed,
             fixedColor: AppColors.White,
-            showUnselectedLabels: false,
             currentIndex: selectedIndex,
             items: [
               BottomNavigationBarItem(

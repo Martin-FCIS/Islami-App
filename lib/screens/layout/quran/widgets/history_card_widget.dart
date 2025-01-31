@@ -11,6 +11,7 @@ class HistoryCardWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var theme=Theme.of(context);
     var size=MediaQuery.of(context).size;
     return InkWell(
       onTap: () {
@@ -20,7 +21,7 @@ class HistoryCardWidget extends StatelessWidget {
         margin: EdgeInsets.all(4),
         padding: EdgeInsets.all(10),
         decoration: BoxDecoration(
-            color: AppColors.WhiteCoffe,
+            color: theme.primaryColor,
             borderRadius: BorderRadius.circular(20)
         ),
         child:Row(
@@ -29,8 +30,8 @@ class HistoryCardWidget extends StatelessWidget {
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(sura.suraEn,style: TextStyle(fontWeight: FontWeight.bold,fontSize: 18),),
-                Text(sura.suraAr,style:TextStyle(fontWeight: FontWeight.bold,fontSize: 18)),
+                Text(sura.suraEn,style: theme.textTheme.bodyLarge,),
+                Text(sura.suraAr,style:theme.textTheme.bodyLarge),
                 Text(sura.suraVerses + " Verses",),
               ],
             ),
