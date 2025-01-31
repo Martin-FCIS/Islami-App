@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:islami_app/screens/layout/quran/quran_screen.dart';
 
 import '../../../../core/constants/app_assets.dart';
-import '../../../../core/themes/appcolors.dart';
 import '../sura_details.dart';
 
 class HistoryCardWidget extends StatelessWidget {

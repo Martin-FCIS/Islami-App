@@ -1,8 +1,6 @@
 import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:islami_app/core/themes/appcolors.dart';
-import 'package:islami_app/models/app_data.dart';
-
 import '../../../core/constants/app_assets.dart';
 
 class HadthScreen extends StatelessWidget {
