@@ -6,7 +6,7 @@ import '../../../../core/themes/appcolors.dart';
 import '../sura_details.dart';
 
 class HistoryCardWidget extends StatelessWidget {
-  SuraData sura;
+  final SuraData sura;
    HistoryCardWidget({super.key,required this.sura});
 
   @override
