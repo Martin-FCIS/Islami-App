@@ -1,12 +1,27 @@
 import 'package:animate_do/animate_do.dart';
+import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:islami_app/core/themes/appcolors.dart';
+import 'package:islami_app/screens/layout/hadth/widgets/hadeth_card_widget.dart';
 import '../../../core/constants/app_assets.dart';
 
-class HadthScreen extends StatelessWidget {
+class HadthScreen extends StatefulWidget {
   const HadthScreen({super.key});
 
   @override
+  State<HadthScreen> createState() => _HadthScreenState();
+}
+class _HadthScreenState extends State<HadthScreen> {
+  List<HadethData> ahadeth = [];
+
+  @override
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    readData();
+  }
   Widget build(BuildContext context) {
     return Container(
       decoration: const BoxDecoration(
@@ -28,60 +43,42 @@ class HadthScreen extends StatelessWidget {
         child: SafeArea(
           child: Column(
             children: [
-              Image.asset(AppAssets.HomeLogo),
-              Container(
-                padding: EdgeInsets.all(8),
-                decoration: BoxDecoration(
-                  color: AppColors.WhiteCoffe,
-                  borderRadius: BorderRadius.circular(20),
-                ),
-                child: Column(
-                  children: [
-                    Row(
-                      children: [
-                        FadeInLeft(child: Image.asset(AppAssets.SuraDetailsLeft,color: AppColors.Black,)),
-                        Expanded(
-                            child: Center(
-                                child: FadeInDown(
-                          child: Text(
-                            " الحديث الاول",
-                            style: TextStyle(
-                                color: AppColors.Black,
-                                fontSize: 24,
-                                fontWeight: FontWeight.bold),
-                          ),
-                        ))),
-                        FadeInRight(child: Image.asset(AppAssets.SuraDetailsRight,color: AppColors.Black)),
-                      ],
-                    ),
-                    Text(
-                      " الحديث الاول",
-                      style: TextStyle(
-                          color: AppColors.Black,
-                          fontSize: 24,
-                          fontWeight: FontWeight.bold),
-                    ),
-                    Text(
-                      " الحديث الاول",
-                      style: TextStyle(
-                          color: AppColors.Black,
-                          fontSize: 24,
-                          fontWeight: FontWeight.bold),
-                    ),
-                    Text(
-                      " الحديث الاول",
-                      style: TextStyle(
-                          color: AppColors.Black,
-                          fontSize: 24,
-                          fontWeight: FontWeight.bold),
-                    ),
-                  ],
-                ),
-              )
+                Image.asset(AppAssets.HomeLogo),
+                Expanded(
+                  child: CarouselSlider.builder(itemCount: 50, itemBuilder:(context, index, realIndex) {
+                  return HadethCardWidget(hadethData: ahadeth[index]);
+                                }, options: CarouselOptions(
+                  viewportFraction: 0.8,
+                  height: double.infinity,
+                    enlargeCenterPage: true,
+                  
+                                )
+                                ),
+                )
             ],
           ),
         ),
       ),
     );
   }
+
+  void readData() async {
+    for (int i = 1; i <= 50; i++) {
+      String fullData = await rootBundle.loadString("assets/Hadeeth/h$i.txt");
+      String title = fullData.split("\n")[0];
+      String body = fullData.split("\n")[1];
+      ahadeth.add(HadethData(title, body));
+    }
+    setState(() {});
+  }
+}
+
+class HadethData {
+  String title;
+  String body;
+
+  HadethData(
+    this.title,
+    this.body,
+  );
 }

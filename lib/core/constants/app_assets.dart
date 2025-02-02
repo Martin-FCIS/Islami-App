@@ -16,4 +16,5 @@ class AppAssets {
   static const String SuraDetailsButtom="assets/logos/Mask group.png";
   static const String suraCard="assets/images/Rectangle 124.png";
   static const String hadethBg="assets/images/vertical-shot-hassan-ii-mosque-casablanca-morocco.png";
+  static const String hadethCardBg="assets/images/HadithCardBackGround 1.png";
 }
