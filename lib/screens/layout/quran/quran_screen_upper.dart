@@ -1,7 +1,6 @@
 import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:islami_app/models/app_data.dart';
-import 'package:islami_app/screens/layout/quran/quran_screen.dart';
 import '../../../core/constants/app_assets.dart';
 import '../../../core/themes/appcolors.dart';
 

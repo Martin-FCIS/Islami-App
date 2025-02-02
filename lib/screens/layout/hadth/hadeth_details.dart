@@ -4,7 +4,6 @@ import 'package:flutter/services.dart';
 import 'package:islami_app/core/constants/app_assets.dart';
 import 'package:islami_app/core/themes/appcolors.dart';
 import 'package:islami_app/screens/layout/hadth/hadth_screen.dart';
-import 'package:islami_app/screens/layout/quran/quran_screen.dart';
 
 class HadethDetails extends StatefulWidget {
   static const String routeName = "HadethDetailes";
@@ -66,13 +65,16 @@ class _HadethDetailsState extends State<HadethDetails> {
           SingleChildScrollView(
             child: Padding(
               padding: const EdgeInsets.all(8.0),
-              child: Text(
-                arg.body,
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                    color: AppColors.WhiteCoffe,
-                    fontSize: 24,
-                    fontWeight: FontWeight.bold),
+              child: ZoomIn(
+                delay: Duration(seconds: 1),
+                child: Text(
+                  arg.body,
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                      color: AppColors.WhiteCoffe,
+                      fontSize: 24,
+                      fontWeight: FontWeight.bold),
+                ),
               ),
             ),
           ),

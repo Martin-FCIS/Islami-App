@@ -2,7 +2,6 @@ import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:islami_app/screens/layout/hadth/hadeth_details.dart';
 import 'package:islami_app/screens/layout/hadth/hadth_screen.dart';
-
 import '../../../../core/constants/app_assets.dart';
 import '../../../../core/themes/appcolors.dart';
 

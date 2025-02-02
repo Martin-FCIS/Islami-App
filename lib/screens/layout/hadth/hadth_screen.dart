@@ -43,17 +43,23 @@ class _HadthScreenState extends State<HadthScreen> {
         child: SafeArea(
           child: Column(
             children: [
-                Image.asset(AppAssets.HomeLogo),
-                Expanded(
-                  child: CarouselSlider.builder(itemCount: 50, itemBuilder:(context, index, realIndex) {
-                  return HadethCardWidget(hadethData: ahadeth[index]);
-                                }, options: CarouselOptions(
-                  viewportFraction: 0.8,
-                  height: double.infinity,
-                    enlargeCenterPage: true,
-                  
-                                )
-                                ),
+                FadeInDown(
+                  delay: Duration(seconds: 2),
+                    child: Image.asset(AppAssets.HomeLogo)),
+                if(ahadeth.isNotEmpty)
+                  Expanded(
+                  child: ZoomIn(
+                    delay: Duration(seconds: 3),
+                    child: CarouselSlider.builder(itemCount: 50, itemBuilder:(context, index, realIndex) {
+                    return HadethCardWidget(hadethData: ahadeth[index]);
+                                  }, options: CarouselOptions(
+                    viewportFraction: 0.8,
+                    height: double.infinity,
+                      enlargeCenterPage: true,
+
+                                  )
+                                  ),
+                  ),
                 )
             ],
           ),
