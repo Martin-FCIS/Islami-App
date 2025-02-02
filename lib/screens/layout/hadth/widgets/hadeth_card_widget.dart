@@ -7,7 +7,7 @@ import '../../../../core/constants/app_assets.dart';
 import '../../../../core/themes/appcolors.dart';
 
 class HadethCardWidget extends StatelessWidget {
- final HadethData hadethData;
+  HadethData hadethData;
 
   HadethCardWidget({super.key, required this.hadethData});
 
