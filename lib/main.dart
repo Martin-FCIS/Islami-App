@@ -2,15 +2,17 @@ import 'package:flutter/material.dart';
 import 'package:islami_app/screens/layout/hadth/hadeth_details.dart';
 import 'package:islami_app/screens/layout/layout_screen.dart';
 import 'package:islami_app/screens/layout/quran/sura_details.dart';
+import 'package:islami_app/screens/onboarding/onboarding_screen.dart';
 import 'package:islami_app/screens/splash/splash_screen.dart';
 
 import 'core/themes/appcolors.dart';
 
-void main() {
-  runApp(const MyApp());
+void main()async {
+   runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
+
   const MyApp({super.key});
 
   // This widget is the root of your application.
@@ -47,6 +49,7 @@ class MyApp extends StatelessWidget {
       routes: {
         LayoutScreen.routeName: (context) => LayoutScreen(),
         SplashScreen.routeName: (context) => SplashScreen(),
+        OnboardingScreen.routeName:(context)=>OnboardingScreen(),
         SuraDetails.routeName: (context) => SuraDetails(),
         HadethDetails.routeName: (context) => HadethDetails(),
       },

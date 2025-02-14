@@ -4,6 +4,7 @@ import 'package:islami_app/core/constants/app_assets.dart';
 import 'package:islami_app/core/themes/appcolors.dart';
 import 'package:islami_app/screens/layout/hadth/hadth_screen.dart';
 import 'package:islami_app/screens/layout/quran/quran_screen.dart';
+import 'package:islami_app/screens/layout/sebha/sebha_screen.dart';
 import 'package:islami_app/screens/layout/widgets/custom_bttm_nav_item.dart';
 
 class LayoutScreen extends StatefulWidget {
@@ -20,6 +21,7 @@ class _LayoutScreenState extends State<LayoutScreen> {
   List<Widget> Screens = [
     QuranScreen(),
     HadthScreen(),
+    SebhaScreen(),
   ];
 
   @override

@@ -17,4 +17,12 @@ class AppAssets {
   static const String suraCard="assets/images/Rectangle 124.png";
   static const String hadethBg="assets/images/vertical-shot-hassan-ii-mosque-casablanca-morocco.png";
   static const String hadethCardBg="assets/images/HadithCardBackGround 1.png";
+  static const String bearishOnboarding="assets/images/bearish.png";
+  static const String kabbaOnboarding="assets/images/kabba.png";
+  static const String radioOnboarding="assets/images/radio.png";
+  static const String readingOnboarding="assets/images/reading.png";
+  static const String welcomeOnboarding="assets/images/welcome.png";
+  static const String sebhaBg="assets/images/close-up-islamic-new-year-with-quran-books.png";
+  static const String sebhaBody="assets/icons/sebha_body.png";
+  static const String sebhaHead="assets/icons/sebha_head.png";
 }
